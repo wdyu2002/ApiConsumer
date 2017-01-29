@@ -1,0 +1,65 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.devculture.apiconsumer.adapters.AvailableApiAdapter.EventHandler" />
+
+        <variable
+            name="api"
+            type="com.devculture.apiconsumer.models.Api" />
+
+    </data>
+
+    <FrameLayout
+        android:id="@+id/group_view"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:onClick="@{() -> handler.onItemClick(api)}">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{api.title}" />
+
+                <TextView
+                    android:id="@+id/url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{api.url}" />
+
+                <TextView
+                    android:id="@+id/activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{api.activity}" />
+
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{api.rating}" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </FrameLayout>
+</layout>
+

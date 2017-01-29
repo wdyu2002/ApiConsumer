@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- AvailableApi Data Provider -->
+
+    <string-array name="available_api">
+        <item>
+            {
+                \"title\":\"Top Reddits\",
+                \"url\":\"http://reddit.com/top\",
+                \"activity\":\"com.devculture.apiconsumer.ui.RedditTopAuthActivity\",
+                \"rating\":"5.0"
+            }
+        </item>
+        <item>
+            {
+                \"title\":\"Top Movies\",
+                \"url\":\"http://rottentomatoes.com/top\",
+                \"activity\":\"com.devculture.apiconsumer.ui.RottenTomatoesTopMoviesActivity\",
+                \"rating\":"1.0"
+            }
+        </item>
+    </string-array>
+
+</resources>
