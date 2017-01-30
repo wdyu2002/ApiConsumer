@@ -1,0 +1,102 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.devculture.apiconsumer.adapters.RedditTopAdapter.EventHandler" />
+
+        <variable
+            name="reddit"
+            type="com.devculture.apiconsumer.models.RedditTop" />
+
+    </data>
+
+    <FrameLayout
+        android:id="@+id/group_view"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:onClick="@{() -> handler.onItemClick(reddit)}">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/post_id"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@{reddit.id}"
+                    android:textColor="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/ups"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@id/post_id"
+                    android:text="@{reddit.ups}"
+                    android:textColor="@android:color/darker_gray" />
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@id/ups"
+                    android:contentDescription="@null" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/posted"
+                    android:layout_toEndOf="@id/post_id"
+                    android:layout_toRightOf="@id/post_id"
+                    android:text="@{reddit.title}"
+                    android:textColor="@android:color/holo_blue_dark" />
+
+                <TextView
+                    android:id="@id/posted"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/comments"
+                    android:layout_toEndOf="@id/post_id"
+                    android:layout_toRightOf="@id/post_id"
+                    android:gravity="end"
+                    android:text='@{"Posted: " + reddit.postedDate + " by " + reddit.author}'
+                    android:textColor="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@id/comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@id/post_id"
+                    android:layout_toRightOf="@id/post_id"
+                    android:gravity="end"
+                    android:text='@{Integer.toString(reddit.numComments) + " comments"}'
+                    android:textColor="@android:color/darker_gray" />
+
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </FrameLayout>
+</layout>
+

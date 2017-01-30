@@ -9,7 +9,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.devculture.apiconsumer.R;
-import com.devculture.apiconsumer.biz.Reddit;
+import com.devculture.apiconsumer.http.reddit.RedditClient;
+import com.devculture.apiconsumer.http.reddit.RedditTokenRequestListener;
 import com.devculture.apiconsumer.ui.BaseActivity;
 
 import butterknife.BindView;
@@ -21,27 +22,9 @@ import butterknife.BindView;
  */
 public class RedditTopAuthActivity extends BaseActivity {
 
-    /**
-     * Reddit connection event listener.
-     */
-    private Reddit.Listener listener = new Reddit.Listener() {
-        @Override
-        public void onRedditEvent(Reddit.Event event, String reasoning) {
-            switch (event) {
-                case TOKEN_RECEIVED:
-                    pushActivity(RedditTopListActivity.class, null);
-                    break;
-                case TOKEN_FAIL:
-                    // display reason for token request failure.
-                    Snackbar.make(webView, reasoning, Snackbar.LENGTH_LONG).setAction("Error", null).show();
-                    break;
-            }
-        }
-    };
-
     @BindView(R.id.webview)
     WebView webView;
-    private Reddit reddit;
+    private RedditClient reddit;
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -50,13 +33,13 @@ public class RedditTopAuthActivity extends BaseActivity {
         setContentView(R.layout.activity_reddit_top_auth);
 
         // initialize reddit client.
-        reddit = new Reddit(RedditTopAuthActivity.this, listener);
+        reddit = new RedditClient(RedditTopAuthActivity.this);
 
         // initialize the webview.
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl(Reddit.getAuthenticationUrl());
+        webView.loadUrl(RedditClient.getAuthenticationUrl());
         webView.setWebViewClient(new WebViewClient() {
 
             @SuppressWarnings("deprecation")
@@ -80,9 +63,18 @@ public class RedditTopAuthActivity extends BaseActivity {
                 // user clicks on 'accept', and its url will contain the auth-code.
                 String code = getCodeParameter(Uri.parse(url));
                 if (code != null) {
-                    reddit.asyncGetToken(code);
+                    reddit.asyncGetToken(code, new RedditTokenRequestListener() {
+                        @Override
+                        public void onTokenRequestSuccess(String token) {
+                            pushActivity(RedditTopListActivity.class, null);
+                        }
+                        @Override
+                        public void onFail(String reason) {
+                            Snackbar.make(webView, reason, Snackbar.LENGTH_LONG).setAction("Error", null).show();
+                        }
+                    });
                 } else if (url.contains("error=access_denied")) {
-                    Log.e("Reddit", "Error occurred during oAuth process");
+                    Snackbar.make(webView, "oAuth access denied", Snackbar.LENGTH_LONG).setAction("Error", null).show();
                 }
             }
 

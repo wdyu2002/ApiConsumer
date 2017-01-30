@@ -18,7 +18,7 @@ abstract class DataProviderAdapter<DP extends DataProvider, VH extends RecyclerV
         this.dataProvider = dataProvider;
     }
 
-    final DP getDataProvider() {
+    public final DP getDataProvider() {
         return dataProvider;
     }
 

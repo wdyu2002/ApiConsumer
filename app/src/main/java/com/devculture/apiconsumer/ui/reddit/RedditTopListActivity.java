@@ -1,37 +1,46 @@
 package com.devculture.apiconsumer.ui.reddit;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.util.Log;
 
 import android.support.v7.app.ActionBar;
-import android.view.MenuItem;
 
 import com.devculture.apiconsumer.R;
 
-import com.devculture.apiconsumer.ui.dummy.DummyContent;
+import com.devculture.apiconsumer.adapters.RedditTopAdapter;
+import com.devculture.apiconsumer.http.reddit.RedditClient;
+import com.devculture.apiconsumer.http.reddit.RedditTopRequestListener;
+import com.devculture.apiconsumer.models.RedditTop;
+import com.devculture.apiconsumer.ui.BaseActivity;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+
 /**
- * An activity representing a list of Reddits. This activity
- * has different presentations for handset and tablet-size devices. On
- * handsets, the activity presents a list of items, which when touched,
- * lead to a {@link RedditTopDetailActivity} representing
- * item details. On tablets, the activity presents the list of items and
- * item details side-by-side using two vertical panes.
+ * Activity in charge of retrieving list of top reddits. When appropriate, sends just enough
+ * data to the detail fragment/activity such that it can display the reddit details.
  */
-public class RedditTopListActivity extends AppCompatActivity {
+public class RedditTopListActivity extends BaseActivity {
+
+    RedditTopAdapter.OnItemClickListener listener = new RedditTopAdapter.OnItemClickListener() {
+        @Override
+        public void onItemClicked(RedditTop reddit) {
+            Log.e("RedditTop", "item clicked");
+        }
+    };
+
+    /**
+     * Butter-knife.
+     */
+    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.reddit_list) RecyclerView recyclerView;
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -39,33 +48,33 @@ public class RedditTopListActivity extends AppCompatActivity {
      */
     private boolean mTwoPane;
 
+    /**
+     * The reddit client.
+     */
+    private RedditClient reddit;
+    private RedditTopAdapter redditAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reddit_list);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // hook up the toolbar.
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        // Show the Up button in the action bar.
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        View recyclerView = findViewById(R.id.reddit_list);
-        assert recyclerView != null;
-        setupRecyclerView((RecyclerView) recyclerView);
+        // initialize reddit client.
+        reddit = new RedditClient(this);
 
+        // hook up the recyclerView.
+        redditAdapter = new RedditTopAdapter(this, listener);
+        recyclerView.setAdapter(redditAdapter);
+
+        // check for device configuration.
         if (findViewById(R.id.reddit_detail_container) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-w900dp).
@@ -75,93 +84,54 @@ public class RedditTopListActivity extends AppCompatActivity {
         }
     }
 
+    int count;
+    String before;
+    String after;
+
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            // This ID represents the Home or Up button. In the case of this
-            // activity, the Up button is shown. Use NavUtils to allow users
-            // to navigate up one level in the application structure. For
-            // more details, see the Navigation pattern on Android Design:
-            //
-            // http://developer.android.com/design/patterns/navigation.html#up-vs-back
-            //
-            // navigateUpFromSameTask(this);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+    public void onResume() {
+        super.onResume();
 
-    private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(DummyContent.ITEMS));
-    }
-
-    public class SimpleItemRecyclerViewAdapter
-            extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
-
-        private final List<DummyContent.DummyItem> mValues;
-
-        public SimpleItemRecyclerViewAdapter(List<DummyContent.DummyItem> items) {
-            mValues = items;
-        }
-
-        @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.reddit_list_content, parent, false);
-            return new ViewHolder(view);
-        }
-
-        @Override
-        public void onBindViewHolder(final ViewHolder holder, int position) {
-            holder.mItem = mValues.get(position);
-            holder.mIdView.setText(mValues.get(position).id);
-            holder.mContentView.setText(mValues.get(position).content);
-
-            holder.mView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (mTwoPane) {
-                        Bundle arguments = new Bundle();
-                        arguments.putString(RedditTopDetailFragment.ARG_ITEM_ID, holder.mItem.id);
-                        RedditTopDetailFragment fragment = new RedditTopDetailFragment();
-                        fragment.setArguments(arguments);
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.reddit_detail_container, fragment)
-                                .commit();
-                    } else {
-                        Context context = v.getContext();
-                        Intent intent = new Intent(context, RedditTopDetailActivity.class);
-                        intent.putExtra(RedditTopDetailFragment.ARG_ITEM_ID, holder.mItem.id);
-
-                        context.startActivity(intent);
+        // make a call to fetch top reddits.
+        reddit.asyncGetTopReddits(0, 25, new RedditTopRequestListener() {
+            @Override
+            public void onTopRequestSuccess(JSONObject response) {
+                RedditTop[] list = null;
+                try {
+                    JSONArray array = response.getJSONObject("data").getJSONArray("children");
+                    list = new RedditTop[array.length()];
+                    for (int i=0; i<array.length(); i++) {
+                        list[i] = new RedditTop(array.getJSONObject(i));
                     }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    redditAdapter.getDataProvider().addAll(list);
                 }
-            });
-        }
-
-        @Override
-        public int getItemCount() {
-            return mValues.size();
-        }
-
-        public class ViewHolder extends RecyclerView.ViewHolder {
-            public final View mView;
-            public final TextView mIdView;
-            public final TextView mContentView;
-            public DummyContent.DummyItem mItem;
-
-            public ViewHolder(View view) {
-                super(view);
-                mView = view;
-                mIdView = (TextView) view.findViewById(R.id.id);
-                mContentView = (TextView) view.findViewById(R.id.content);
             }
 
             @Override
-            public String toString() {
-                return super.toString() + " '" + mContentView.getText() + "'";
+            public void onFail(String reason) {
+
             }
-        }
+        });
     }
+
+// passing data to detail view.
+//    if (mTwoPane) {
+//        Bundle arguments = new Bundle();
+//        arguments.putString(RedditTopDetailFragment.ARG_ITEM_ID, holder.mItem.id);
+//        RedditTopDetailFragment fragment = new RedditTopDetailFragment();
+//        fragment.setArguments(arguments);
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.reddit_detail_container, fragment)
+//                .commit();
+//    } else {
+//        Context context = v.getContext();
+//        Intent intent = new Intent(context, RedditTopDetailActivity.class);
+//        intent.putExtra(RedditTopDetailFragment.ARG_ITEM_ID, holder.mItem.id);
+//
+//        context.startActivity(intent);
+//    }
+//
 }

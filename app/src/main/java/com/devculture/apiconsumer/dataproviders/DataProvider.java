@@ -67,11 +67,13 @@ public class DataProvider<T> {
      */
     @SafeVarargs
     public final void addAll(T... dataObjects) {
-        this.dataObjects.addAll(Arrays.asList(dataObjects));
+        if (dataObjects != null) {
+            this.dataObjects.addAll(Arrays.asList(dataObjects));
 
-        // notify data set changed.
-        if (listener != null) {
-            listener.onDataSetChanged(this);
+            // notify data set changed.
+            if (listener != null) {
+                listener.onDataSetChanged(this);
+            }
         }
     }
 
