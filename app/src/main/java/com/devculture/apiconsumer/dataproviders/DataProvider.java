@@ -1,8 +1,10 @@
 package com.devculture.apiconsumer.dataproviders;
 
 import android.content.Context;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,10 +30,10 @@ public class DataProvider<T> {
     /**
      * Create a DataProvider from xml resource.
      *
-     * @param context Context
+     * @param context       Context
      * @param strArrayResId String-array resource of valid JSON to be converted
      *                      into Data objects.
-     * @param dataClass EJB class equivalent of the valid JSON.
+     * @param dataClass     EJB class equivalent of the valid JSON.
      */
     public DataProvider(Context context, int strArrayResId, Class<T> dataClass) {
         this.dataObjects = new ArrayList<>();
@@ -54,7 +56,7 @@ public class DataProvider<T> {
      * @param dataObjects Data objects.
      */
     @SafeVarargs
-    public DataProvider(T ... dataObjects) {
+    public DataProvider(T... dataObjects) {
         this.dataObjects = new ArrayList<>(Arrays.asList(dataObjects));
     }
 
@@ -64,7 +66,7 @@ public class DataProvider<T> {
      * @param dataObjects Data objects.
      */
     @SafeVarargs
-    public final void addAll(T ... dataObjects) {
+    public final void addAll(T... dataObjects) {
         this.dataObjects.addAll(Arrays.asList(dataObjects));
 
         // notify data set changed.

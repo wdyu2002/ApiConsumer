@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
+
 import butterknife.ButterKnife;
 
 public class BaseActivity extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class BaseActivity extends AppCompatActivity {
      * Push an activity onto the current activity stack with className.
      *
      * @param className The fully qualified className of the activity class to instantiate.
-     * @param bundle Bundle data to be passed to the new activity.
+     * @param bundle    Bundle data to be passed to the new activity.
      */
     public void pushActivity(String className, Bundle bundle) {
         try {
@@ -32,7 +33,7 @@ public class BaseActivity extends AppCompatActivity {
     /**
      * Push an activity onto the current activity stack.
      *
-     * @param clss The activity class to instantiate.
+     * @param clss   The activity class to instantiate.
      * @param bundle Bundle data to be passed to the new activity.
      */
     public void pushActivity(Class<?> clss, Bundle bundle) {

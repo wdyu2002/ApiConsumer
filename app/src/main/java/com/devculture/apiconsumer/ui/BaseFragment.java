@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
 import java.util.Map;
 
 @SuppressWarnings("unused")
@@ -20,10 +21,10 @@ public abstract class BaseFragment extends Fragment {
          * Allows the fragment to notify its Activity Listener that an event occurred, and pass any
          * necessary data back to the Activity to be consumed or passed onto the next fragment.
          *
-         * @param clss Indicator for which fragment fired the event.
+         * @param clss      Indicator for which fragment fired the event.
          * @param eventName Fragment event that occurred.
-         * @param data Data passed between fragments, or from fragment to the activity as part of
-         *             the notification.
+         * @param data      Data passed between fragments, or from fragment to the activity as part of
+         *                  the notification.
          */
         void onFragmentEvent(Class<? extends Fragment> clss, String eventName, Map<String, Object> data);
     }
@@ -66,8 +67,8 @@ public abstract class BaseFragment extends Fragment {
      * consumed or passed onto the next fragment.
      *
      * @param eventName Fragment event that occurred.
-     * @param data Data passed between fragments, or from fragment to the activity as part of the
-     *             notification.
+     * @param data      Data passed between fragments, or from fragment to the activity as part of the
+     *                  notification.
      */
     protected void onFragmentEvent(String eventName, Map<String, Object> data) {
         if (listener != null) {

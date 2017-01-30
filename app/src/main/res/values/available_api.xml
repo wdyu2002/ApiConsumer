@@ -8,7 +8,7 @@
             {
                 \"title\":\"Top Reddits\",
                 \"url\":\"http://reddit.com/top\",
-                \"activity\":\"com.devculture.apiconsumer.ui.RedditTopAuthActivity\",
+                \"activity\":\"com.devculture.apiconsumer.ui.reddit.RedditTopAuthActivity\",
                 \"rating\":"5.0"
             }
         </item>
@@ -16,7 +16,7 @@
             {
                 \"title\":\"Top Movies\",
                 \"url\":\"http://rottentomatoes.com/top\",
-                \"activity\":\"com.devculture.apiconsumer.ui.RottenTomatoesTopMoviesActivity\",
+                \"activity\":\"com.devculture.apiconsumer.ui.rottentomatoes.RottenTomatoesTopMoviesActivity\",
                 \"rating\":"1.0"
             }
         </item>

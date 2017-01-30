@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
 import com.devculture.apiconsumer.R;
 import com.devculture.apiconsumer.databinding.ViewAvailableApiCardBinding;
 import com.devculture.apiconsumer.dataproviders.DataProvider;
@@ -58,7 +59,8 @@ public final class AvailableApiAdapter extends DataProviderAdapter<DataProvider<
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.view_available_api_card, parent, false);
         binding.setHandler(handler);
-        return new RecyclerView.ViewHolder(binding.groupView){};
+        return new RecyclerView.ViewHolder(binding.groupView) {
+        };
     }
 
     @Override

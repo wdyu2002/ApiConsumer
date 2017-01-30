@@ -3,9 +3,11 @@ package com.devculture.apiconsumer.ui;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
 import com.devculture.apiconsumer.R;
 import com.devculture.apiconsumer.adapters.AvailableApiAdapter;
 import com.devculture.apiconsumer.models.Api;
+
 import butterknife.BindView;
 
 public class SelectApiActivity extends BaseActivity {
@@ -20,7 +22,8 @@ public class SelectApiActivity extends BaseActivity {
         }
     };
 
-    @BindView(R.id.api_list) RecyclerView recyclerView;
+    @BindView(R.id.api_list)
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

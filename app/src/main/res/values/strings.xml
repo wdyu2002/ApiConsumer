@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ApiConsumer</string>
+    <string name="title_reddit_list">Reddits</string>
+    <string name="title_reddit_detail">Reddit Detail</string>
 </resources>

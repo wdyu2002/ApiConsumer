@@ -3,156 +3,75 @@
 
     <item
         is-multidex="true"
-        jar="/Users/dyu/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.0/c4ba5371a29ac9b2ad6129b1d39ea38750043eff/gson-2.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.8.0_4df1752948b37003a83ef7290777b7f79f192150/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.android.databinding/adapters/1.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="c56d29136c2257f63f08c29c4e739efb03b06c7d">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.databinding-adapters-1.2.1_653edcd6f1991ce2918101dc206c5100a9c67059/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="f69f0df9318fd89b8756df01a4dcc1b9fba8f1ba">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_cf8ea290fbcc1f8216fc89255e36ce86e217c8f2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_6f168333c34480d9eadbd0e0ac6f27f6c3a88357/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="53992432d369d5740c515baf655b57571d70142d">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_cbc2cc00906e4eb92b44fdf13ad9bff9a84c9e0e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.android.databinding/library/1.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="957dc30b1495f8689271e00d56ab09cc9192df02">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.databinding-library-1.2.1_6991143748f88e9a22ec876646c547e1de853a49/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_af7c2ba7ae97c4af92811b55a810c4522189048e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_5bfaee5923bc6972b29bb25f1835daa3960f123a/classes.dex" />
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_0226e337665ec8eca6a206a44b7c4e9c216b958e/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_965e0ac5318e9373a5f8b8889b168ec771517f3c/classes.dex" />
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.0_cf15dcadbc04cd4965d0d035a27dee8fd4ad4b4e/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.5.1/jars/classes.jar"
+        jar="/Users/dyu/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.3.6/526a9f794eab830eae4f23a62c572878b3f491ab/httpclient-4.3.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/httpclient-4.3.6_3a7615223f240de96fdff5d846feb79ec9c1c12d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.5.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton-butterknife-8.5.1_61125d79d23d7183bd79770753dd6517e974860a/classes.dex" />
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton-butterknife-8.5.1_0c3b11f7f6c1d5e4cb8c6b8b6f0154f09c4ece5b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="aee64634871d88a419d59eb743c1258a60f19700">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_40fcd53b4bd5e036744ee20a5ba9aed44e930eea/classes.dex" />
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_3152e843c754e6200253fee3c24b1fb71ca87a00/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_84f4d6047d1d6add9dbb6890a0af5f1823397a5f/classes.dex" />
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_32770773faddc8ce505f7a574d9a924554f014b0/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7f2420506110902f033406b25697cf97ee8c38b2">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-25.1.0_edea3b765d5a59f764c60610a9089d67f9923dd3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.0_b28e2666f2a0c2764e7b8844a7a93d90b538add3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_d31cae1bd39b6a0155fdeddcf61b74618dfc71c2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_41428766b315fed7ab65f64f0a85f44152c61455/classes.dex" />
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_a5c6931ef5cd27f511f505709f655b1e7ae44cb1/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_50354db10cef95e6ef3625cbc2cae4a6997ed787/classes.dex" />
+        sha1="7f2420506110902f033406b25697cf97ee8c38b2">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-25.1.0_be8fac497cfdc94cfd4ce053f4302c17e5a6ece9/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -161,7 +80,124 @@
         optimize="true"
         revision="24.0.3"
         sha1="b4b51d1925cdfda98fd861230c1ecb5855500129">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/baseLibrary-2.2.3_474e89972d5faa940568625dac87a46c353c6a04/classes.dex" />
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/baseLibrary-2.2.3_474e89972d5faa940568625dac87a46c353c6a04/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/dyu/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.0/c4ba5371a29ac9b2ad6129b1d39ea38750043eff/gson-2.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.8.0_4df1752948b37003a83ef7290777b7f79f192150/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_256ff1c106e57ddb2a5ed7f2c41b8510f772bd1a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_3a10a81b24fe7d8856ffbc6df2c5b69c2c3e854c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.0_de282c2ec5d4e3c89f806ef908aff468263d0133/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_603936c8bd43cf3216449d2fb3e8a4e337ec2031/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.0_9104424e0531163fa6323a326a233784e294554d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.databinding/library/1.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="957dc30b1495f8689271e00d56ab09cc9192df02">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.databinding-library-1.2.1_cb11b39a41adc5323d980390af347e1a58b426a9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_a68a29d1d8e8110d45d6eac69b706c5cb273183f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.databinding/adapters/1.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c56d29136c2257f63f08c29c4e739efb03b06c7d">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.databinding-adapters-1.2.1_16cb39f728db041efab4cdb317090a52730395c5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_b1df4f10fd74dcb4b672841669df56a7056b9063/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="df29ed45ff94db4401ab780f7094199b78619c61">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_06ac2613ddc11da10d5df1e916f302aaa11bedbd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/dyu/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_2d992da0ebea3d17beb517f28cf1f43ec052a60c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="31e1dd363d0373b52c493b5f3b50c9bfadb989c9">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fb8f3ecd98258f4c1da9f614df4213b416dc884e/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -170,7 +206,7 @@
         optimize="true"
         revision="24.0.3"
         sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-annotations-8.5.1_00708359e088eaf97150e28bde5f750142337598/classes.dex" />
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-annotations-8.5.1_00708359e088eaf97150e28bde5f750142337598/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -179,7 +215,7 @@
         optimize="true"
         revision="24.0.3"
         sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
-        <dex dex="/Users/dyu/Desktop/Reddit-OAuth-master/ApiConsumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_5e7201481689e039ace13f299df107c1ed23e2dd/classes.dex" />
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_5e7201481689e039ace13f299df107c1ed23e2dd/classes.dex" />
     </item>
 
 </items>
