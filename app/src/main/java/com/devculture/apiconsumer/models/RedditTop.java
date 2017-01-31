@@ -55,10 +55,10 @@ public class RedditTop {
         isSelf = data.getBoolean("is_self");
         hideScore = data.getBoolean("hide_score");
         permalink = data.getString("permalink").replace("\\", "");
-        created = data.getLong("created");
+        created = data.getLong("created") * 1000;
         url = data.getString("url");
         title = data.getString("title");
-        createdUtc = data.getLong("created_utc");
+        createdUtc = data.getLong("created_utc") * 1000;
         linkFlairText = data.getString("link_flair_text");
         numComments = data.getInt("num_comments");
         // convert ups to string.
@@ -154,13 +154,20 @@ public class RedditTop {
     }
 
     /**
+     * Returns number of hours ago this post was created.
+     */
+    public String getPostedHoursAgo() {
+        return Integer.toString((int) (System.currentTimeMillis() - createdUtc) / 3600000);
+    }
+
+    /**
      * Binds to app:thumbnail=@{reddit.thumbnail}
      * Passes reddit.thumbnail into this method as the 2nd parameter.
      *
      * @param view      The imageview that specifies the app:thumbnail attribute.
      * @param thumbnail The thumbnail url.
      */
-    @BindingAdapter({"bind:thumbnail"})
+    @BindingAdapter({"bind:reddit_thumbnail"})
     public static void loadImage(ImageView view, String thumbnail) {
         Picasso.with(view.getContext())
                 .load(thumbnail)

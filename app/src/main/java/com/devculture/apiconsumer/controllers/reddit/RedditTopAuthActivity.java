@@ -29,7 +29,7 @@ public class RedditTopAuthActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reddit_top_auth);
+        setContentView(R.layout.activity_reddit_auth);
 
         // initialize reddit client.
         reddit = new RedditClient(RedditTopAuthActivity.this);

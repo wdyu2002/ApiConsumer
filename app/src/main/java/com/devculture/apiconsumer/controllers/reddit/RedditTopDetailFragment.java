@@ -41,7 +41,7 @@ public class RedditTopDetailFragment extends BaseFragment {
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.reddit_detail, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_reddit_detail, container, false);
         ButterKnife.bind(this, rootView);
 
         webView.getSettings().setJavaScriptEnabled(true);

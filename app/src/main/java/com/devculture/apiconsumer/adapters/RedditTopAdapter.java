@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.devculture.apiconsumer.R;
-import com.devculture.apiconsumer.databinding.ViewRedditSummaryCardBinding;
+import com.devculture.apiconsumer.databinding.CardRedditSummaryBinding;
 import com.devculture.apiconsumer.dataproviders.DataProvider;
 import com.devculture.apiconsumer.models.RedditTop;
 
@@ -37,11 +37,11 @@ public final class RedditTopAdapter extends DataProviderAdapter<DataProvider<Red
         }
     }
 
-    private ViewRedditSummaryCardBinding binding;
+    private CardRedditSummaryBinding binding;
     private OnItemClickListener listener;
     private EventHandler handler = new EventHandler();
 
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "WeakerAccess"})
     public RedditTopAdapter(Context context) {
         super(new DataProvider<RedditTop>());
         getDataProvider().setListener(new DataProvider.Listener() {
@@ -64,7 +64,7 @@ public final class RedditTopAdapter extends DataProviderAdapter<DataProvider<Red
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.view_reddit_summary_card, parent, false);
+        binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.card_reddit_summary, parent, false);
         binding.setHandler(handler);
         return new RecyclerView.ViewHolder(binding.groupView) {
         };

@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.devculture.apiconsumer.R;
-import com.devculture.apiconsumer.databinding.ViewAvailableApiCardBinding;
+import com.devculture.apiconsumer.databinding.CardAvailableApiBinding;
 import com.devculture.apiconsumer.dataproviders.DataProvider;
 import com.devculture.apiconsumer.models.Api;
 
@@ -36,7 +36,7 @@ public final class AvailableApiAdapter extends DataProviderAdapter<DataProvider<
         }
     }
 
-    private ViewAvailableApiCardBinding binding;
+    private CardAvailableApiBinding binding;
     private OnItemClickListener listener;
     private EventHandler handler = new EventHandler();
 
@@ -57,7 +57,7 @@ public final class AvailableApiAdapter extends DataProviderAdapter<DataProvider<
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.view_available_api_card, parent, false);
+        binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.card_available_api, parent, false);
         binding.setHandler(handler);
         return new RecyclerView.ViewHolder(binding.groupView) {
         };

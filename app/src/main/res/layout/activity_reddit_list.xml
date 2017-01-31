@@ -19,9 +19,9 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <!-- reddit_list is either a single recyclerView or recyclerView + detail view frameLayout -->
+        <!-- fragment_reddit_list is either a single recyclerView or recyclerView + detail view frameLayout -->
 
-        <include layout="@layout/reddit_list" />
+        <include layout="@layout/fragment_reddit_list" />
 
     </FrameLayout>
 
