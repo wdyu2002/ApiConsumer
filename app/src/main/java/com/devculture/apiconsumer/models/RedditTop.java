@@ -28,6 +28,8 @@ public class RedditTop {
     private boolean over18;
     private String thumbnail;
     private String subredditId;
+    private String postHint;
+    private boolean isSelf;
     private boolean hideScore;
     private String permalink;
     private long created;
@@ -48,8 +50,10 @@ public class RedditTop {
         over18 = data.getBoolean("over_18");
         thumbnail = data.getString("thumbnail");
         subredditId = data.getString("subreddit_id");
+        postHint = data.getString("post_hint");
+        isSelf = data.getBoolean("is_self");
         hideScore = data.getBoolean("hide_score");
-        permalink = data.getString("permalink");
+        permalink = data.getString("permalink").replace("\\", "");
         created = data.getLong("created");
         url = data.getString("url");
         title = data.getString("title");
@@ -99,6 +103,14 @@ public class RedditTop {
         return subredditId;
     }
 
+    public String getPostHint() {
+        return postHint;
+    }
+
+    public boolean isSelf() {
+        return isSelf;
+    }
+
     public boolean isHideScore() {
         return hideScore;
     }
@@ -144,7 +156,7 @@ public class RedditTop {
      * Binds to app:thumbnail=@{reddit.thumbnail}
      * Passes reddit.thumbnail into this method as the 2nd parameter.
      *
-     * @param view The imageview that specifies the app:thumbnail attribute.
+     * @param view      The imageview that specifies the app:thumbnail attribute.
      * @param thumbnail The thumbnail url.
      */
     @BindingAdapter({"bind:thumbnail"})

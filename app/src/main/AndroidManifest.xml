@@ -10,18 +10,18 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.SelectApiActivity" />
+        <activity android:name=".controllers.SelectApiActivity" />
         <activity
-            android:name=".ui.reddit.RedditTopAuthActivity"
+            android:name=".controllers.reddit.RedditTopAuthActivity"
             android:label="Reddit Top Posts">
         </activity>
         <activity
-            android:name=".ui.rottentomatoes.RottenTomatoesTopMoviesActivity"
+            android:name=".controllers.rottentomatoes.RottenTomatoesTopMoviesActivity"
             android:label="Rotten Tomatoes Top Movies" />
         <activity
-            android:name=".ui.reddit.RedditTopListActivity"
+            android:name=".controllers.reddit.RedditTopListActivity"
             android:label="@string/title_reddit_list"
-            android:parentActivityName=".ui.BaseActivity"
+            android:parentActivityName=".controllers.BaseActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,16 +30,16 @@
             </intent-filter>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.devculture.apiconsumer.ui.BaseActivity" />
+                android:value="com.devculture.apiconsumer.controllers.BaseActivity" />
         </activity>
         <activity
-            android:name=".ui.reddit.RedditTopDetailActivity"
+            android:name=".controllers.reddit.RedditTopDetailActivity"
             android:label="@string/title_reddit_detail"
-            android:parentActivityName=".ui.reddit.RedditTopListActivity"
+            android:parentActivityName=".controllers.reddit.RedditTopListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.devculture.apiconsumer.ui.reddit.RedditTopListActivity" />
+                android:value="com.devculture.apiconsumer.controllers.reddit.RedditTopListActivity" />
         </activity>
     </application>
 

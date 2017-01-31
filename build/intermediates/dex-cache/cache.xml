@@ -183,6 +183,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="952e73cdfb3f228c88205d288d436202396a4768">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fb8f3ecd98258f4c1da9f614df4213b416dc884e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/projects/api-consumer/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -198,15 +207,6 @@
         revision="24.0.3"
         sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
         <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_2d992da0ebea3d17beb517f28cf1f43ec052a60c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/projects/api-consumer/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="dad4454cceac017265ef81eddb829334118f912d">
-        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fb8f3ecd98258f4c1da9f614df4213b416dc884e/classes.dex" />
     </item>
     <item
         is-multidex="true"

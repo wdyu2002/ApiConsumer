@@ -9,7 +9,7 @@
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context="com.devculture.apiconsumer.ui.reddit.RedditTopListActivity">
+    tools:context="com.devculture.apiconsumer.controllers.reddit.RedditTopListActivity">
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"

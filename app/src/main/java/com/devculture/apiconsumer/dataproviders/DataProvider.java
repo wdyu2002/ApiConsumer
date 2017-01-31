@@ -77,6 +77,22 @@ public class DataProvider<T> {
         }
     }
 
+    /**
+     * Add additional data objects to this data provider.
+     *
+     * @param dataObjects Data objects.
+     */
+    public final void addAll(List<T> dataObjects) {
+        if (dataObjects != null) {
+            this.dataObjects.addAll(dataObjects);
+
+            // notify data set changed.
+            if (listener != null) {
+                listener.onDataSetChanged(this);
+            }
+        }
+    }
+
     public T get(int index) {
         return dataObjects.get(index);
     }
