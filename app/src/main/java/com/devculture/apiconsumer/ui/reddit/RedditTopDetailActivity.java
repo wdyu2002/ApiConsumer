@@ -43,16 +43,16 @@ public class RedditTopDetailActivity extends AppCompatActivity {
         // http://developer.android.com/guide/components/fragments.html
         //
         if (savedInstanceState == null) {
-            // Create the detail fragment and add it to the activity
-            // using a fragment transaction.
-            Bundle arguments = new Bundle();
-            arguments.putString(RedditTopDetailFragment.ARG_ITEM_ID,
-                    getIntent().getStringExtra(RedditTopDetailFragment.ARG_ITEM_ID));
-            RedditTopDetailFragment fragment = new RedditTopDetailFragment();
-            fragment.setArguments(arguments);
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.reddit_detail_container, fragment)
-                    .commit();
+//            // Create the detail fragment and add it to the activity
+//            // using a fragment transaction.
+//            Bundle arguments = new Bundle();
+//            arguments.putString(RedditTopDetailFragment.ARG_ITEM_ID,
+//                    getIntent().getStringExtra(RedditTopDetailFragment.ARG_ITEM_ID));
+//            RedditTopDetailFragment fragment = new RedditTopDetailFragment();
+//            fragment.setArguments(arguments);
+//            getSupportFragmentManager().beginTransaction()
+//                    .add(R.id.reddit_detail_container, fragment)
+//                    .commit();
         }
     }
 

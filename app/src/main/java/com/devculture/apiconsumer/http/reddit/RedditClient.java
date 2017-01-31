@@ -169,14 +169,25 @@ public class RedditClient {
     /**
      * Async http call to get the top posts on reddit by count & limit.
      *
+     * @param before Start offset. Use in conjunction with count to retrieve the previous sequence of posts.
+     * @param after After post id. Use in conjunction with count to retrieve the next sequence of posts.
      * @param count Start offset.
      * @param limit Result limit, defaults to 25 usually. Max is 100.
      */
-    public void asyncGetTopReddits(int count, int limit, final RedditTopRequestListener listener) {
+    public void asyncGetTopReddits(String before, String after, int count, int limit, final RedditTopRequestListener listener) {
         final String token = prefs.getToken();
         if (token.length() > 0) {
+            String url;
+            if (before != null) {
+                url = String.format(Locale.getDefault(), "https://oauth.reddit.com/top?before=%s&count=%d&limit=%d", before, count, limit);
+            } else if (after != null) {
+                url = String.format(Locale.getDefault(), "https://oauth.reddit.com/top?after=%s&count=%d&limit=%d", after, count, limit);
+            } else {
+                url = String.format(Locale.getDefault(), "https://oauth.reddit.com/top?count=%d&limit=%d", count, limit);
+            }
+
             RestClient restClient = new RestClient(context);
-            restClient.get(String.format(Locale.getDefault(), "https://oauth.reddit.com/top?count=%d&limit=%d", count, limit), getRequestHeaders(), null, new JsonHttpResponseHandler() {
+            restClient.get(url, getRequestHeaders(), null, new JsonHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                     if (listener != null) {

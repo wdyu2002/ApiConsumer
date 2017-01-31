@@ -1,25 +1,24 @@
 package com.devculture.apiconsumer.ui.reddit;
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-
-import android.support.v7.app.ActionBar;
 
 import com.devculture.apiconsumer.R;
-
 import com.devculture.apiconsumer.adapters.RedditTopAdapter;
 import com.devculture.apiconsumer.http.reddit.RedditClient;
 import com.devculture.apiconsumer.http.reddit.RedditTopRequestListener;
 import com.devculture.apiconsumer.models.RedditTop;
 import com.devculture.apiconsumer.ui.BaseActivity;
+import com.devculture.widget.EndlessScrollListener;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 
@@ -27,26 +26,29 @@ import butterknife.BindView;
  * Activity in charge of retrieving list of top reddits. When appropriate, sends just enough
  * data to the detail fragment/activity such that it can display the reddit details.
  */
-public class RedditTopListActivity extends BaseActivity {
+public class RedditTopListActivity extends BaseActivity implements RedditTopAdapter.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {
 
-    RedditTopAdapter.OnItemClickListener listener = new RedditTopAdapter.OnItemClickListener() {
-        @Override
-        public void onItemClicked(RedditTop reddit) {
-            Log.e("RedditTop", "item clicked");
-        }
-    };
+    @BindView(R.id.swipe_refresh)
+    SwipeRefreshLayout swipeLayout;
 
-    /**
-     * Butter-knife.
-     */
-    @BindView(R.id.toolbar) Toolbar toolbar;
-    @BindView(R.id.reddit_list) RecyclerView recyclerView;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
+    @BindView(R.id.reddit_list)
+    RecyclerView recyclerView;
+
+    private EndlessScrollListener scroller;
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
-    private boolean mTwoPane;
+    private boolean isTwoPane;
+
+    /**
+     * Map holding onto the previous (before) & next (after) hashes for pagination.
+     */
+    private Map<String, String> pagination = new HashMap<>();
 
     /**
      * The reddit client.
@@ -60,19 +62,27 @@ public class RedditTopListActivity extends BaseActivity {
         setContentView(R.layout.activity_reddit_list);
 
         // hook up the toolbar.
-        setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
 
         // initialize reddit client.
         reddit = new RedditClient(this);
 
+        // set up the swipe refresher.
+        swipeLayout.setEnabled(true);
+        swipeLayout.setOnRefreshListener(this);
+
+        // hook up scroller.
+        scroller = new EndlessScrollListener((LinearLayoutManager) recyclerView.getLayoutManager()) {
+            @Override
+            public void onLoadMore(int page, int totalRedditCount, RecyclerView view) {
+                loadMoreReddits(null, pagination.get("after"), page, totalRedditCount);
+            }
+        };
+
         // hook up the recyclerView.
-        redditAdapter = new RedditTopAdapter(this, listener);
+        redditAdapter = new RedditTopAdapter(this, this);
         recyclerView.setAdapter(redditAdapter);
+        recyclerView.addOnScrollListener(scroller);
 
         // check for device configuration.
         if (findViewById(R.id.reddit_detail_container) != null) {
@@ -80,27 +90,37 @@ public class RedditTopListActivity extends BaseActivity {
             // large-screen layouts (res/values-w900dp).
             // If this view is present, then the
             // activity should be in two-pane mode.
-            mTwoPane = true;
+            isTwoPane = true;
         }
     }
-
-    int count;
-    String before;
-    String after;
 
     @Override
     public void onResume() {
         super.onResume();
+        // make initial call to fetch top reddits.
+        loadMoreReddits(null, null, 0, 0);
+    }
 
-        // make a call to fetch top reddits.
-        reddit.asyncGetTopReddits(0, 25, new RedditTopRequestListener() {
+    /**
+     * Loads more reddits from the api.
+     *
+     * @param before           A hash provided to the server to request the previous set (page) of reddits.
+     * @param after            A hash provided to the server to request the following set (page) of reddits.
+     * @param page             Unused page.
+     * @param totalRedditCount Number of reddits that have actually been loaded from the server.
+     */
+    private void loadMoreReddits(String before, String after, int page, int totalRedditCount) {
+        reddit.asyncGetTopReddits(before, after, totalRedditCount, 25, new RedditTopRequestListener() {
             @Override
             public void onTopRequestSuccess(JSONObject response) {
                 RedditTop[] list = null;
                 try {
-                    JSONArray array = response.getJSONObject("data").getJSONArray("children");
+                    JSONObject data = response.getJSONObject("data");
+                    pagination.put("before", data.getString("before"));
+                    pagination.put("after", data.getString("after"));
+                    JSONArray array = data.getJSONArray("children");
                     list = new RedditTop[array.length()];
-                    for (int i=0; i<array.length(); i++) {
+                    for (int i = 0; i < array.length(); i++) {
                         list[i] = new RedditTop(array.getJSONObject(i));
                     }
                 } catch (Exception e) {
@@ -116,6 +136,19 @@ public class RedditTopListActivity extends BaseActivity {
             }
         });
     }
+
+    @Override
+    public void onRefresh() {
+        scroller.resetState();
+        redditAdapter.getDataProvider().removeAll();
+        loadMoreReddits(null, null, 0, 0);
+    }
+
+    @Override
+    public void onItemClicked(RedditTop reddit) {
+
+    }
+
 
 // passing data to detail view.
 //    if (mTwoPane) {

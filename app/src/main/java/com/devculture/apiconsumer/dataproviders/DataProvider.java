@@ -96,4 +96,13 @@ public class DataProvider<T> {
     public int size() {
         return dataObjects.size();
     }
+
+    public void removeAll() {
+        dataObjects.clear();
+
+        // notify data set changed.
+        if (listener != null) {
+            listener.onDataSetChanged(this);
+        }
+    }
 }
