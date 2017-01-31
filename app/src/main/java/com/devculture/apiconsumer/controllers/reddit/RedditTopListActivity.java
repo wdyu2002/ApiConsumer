@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 
 import com.devculture.apiconsumer.R;
 import com.devculture.apiconsumer.adapters.RedditTopAdapter;
@@ -36,9 +35,6 @@ public class RedditTopListActivity extends BaseActivity implements RedditTopAdap
     @BindView(R.id.swipe_refresh)
     SwipeRefreshLayout reloader;
 
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
-
     @BindView(R.id.reddit_list)
     RecyclerView recyclerView;
 
@@ -65,9 +61,6 @@ public class RedditTopListActivity extends BaseActivity implements RedditTopAdap
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reddit_list);
-
-        // hook up the toolbar.
-        toolbar.setTitle(getTitle());
 
         // initialize redditClient client.
         redditClient = new RedditClient(this);
@@ -114,6 +107,7 @@ public class RedditTopListActivity extends BaseActivity implements RedditTopAdap
      * @param page             Unused page.
      * @param totalRedditCount Number of reddits that have actually been loaded from the server.
      */
+    @SuppressWarnings("UnusedParameters")
     private void loadMoreReddits(String before, String after, int page, int totalRedditCount) {
         redditClient.asyncGetTopReddits(before, after, totalRedditCount, 25, new RedditTopRequestListener() {
             @Override

@@ -10,37 +10,53 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controllers.SelectApiActivity" />
+
+        <!-- api selector -->
         <activity
-            android:name=".controllers.reddit.RedditTopAuthActivity"
-            android:label="Reddit Top Posts">
-        </activity>
-        <activity
-            android:name=".controllers.rottentomatoes.RottenTomatoesTopMoviesActivity"
-            android:label="Rotten Tomatoes Top Movies" />
-        <activity
-            android:name=".controllers.reddit.RedditTopListActivity"
-            android:label="@string/title_reddit_list"
-            android:parentActivityName=".controllers.BaseActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".controllers.SelectApiActivity"
+            android:label="@string/select_an_api">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- reddit -->
+        <activity
+            android:name=".controllers.reddit.RedditTopAuthActivity"
+            android:label="@string/reddit_authentication"
+            android:parentActivityName=".controllers.SelectApiActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.devculture.apiconsumer.controllers.BaseActivity" />
+                android:value="com.devculture.apiconsumer.controllers.SelectApiActivity" />
+        </activity>
+        <activity
+            android:name=".controllers.reddit.RedditTopListActivity"
+            android:label="@string/top_reddits"
+            android:parentActivityName=".controllers.SelectApiActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.devculture.apiconsumer.controllers.SelectApiActivity" />
         </activity>
         <activity
             android:name=".controllers.reddit.RedditTopDetailActivity"
-            android:label="@string/title_reddit_detail"
-            android:parentActivityName=".controllers.reddit.RedditTopListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/reddit"
+            android:parentActivityName=".controllers.reddit.RedditTopListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.devculture.apiconsumer.controllers.reddit.RedditTopListActivity" />
         </activity>
+
+        <!-- rotten tomatoes -->
+        <activity
+            android:name=".controllers.rottentomatoes.RottenTomatoesTopMoviesActivity"
+            android:label="@string/rotten_tomatoes_top_movies"
+            android:parentActivityName=".controllers.SelectApiActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.devculture.apiconsumer.controllers.SelectApiActivity" />
+        </activity>
+
     </application>
 
 </manifest>

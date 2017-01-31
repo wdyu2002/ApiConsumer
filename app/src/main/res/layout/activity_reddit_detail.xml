@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +8,11 @@
     tools:context="com.devculture.apiconsumer.controllers.reddit.RedditTopDetailActivity"
     tools:ignore="MergeRootFrame">
 
-    <include layout="@layout/toolbar" />
+    <!-- toolbar -->
+
+    <!--<include layout="@layout/toolbar" />-->
+
+    <!-- content -->
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/reddit_detail_container"

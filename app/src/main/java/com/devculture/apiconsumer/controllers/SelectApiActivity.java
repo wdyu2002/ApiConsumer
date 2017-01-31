@@ -1,7 +1,6 @@
 package com.devculture.apiconsumer.controllers;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.devculture.apiconsumer.R;
@@ -31,7 +30,6 @@ public class SelectApiActivity extends BaseActivity {
         setContentView(R.layout.activity_select_api);
 
         // instantiation.
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new AvailableApiAdapter(this, onItemClickListener));
     }
 }

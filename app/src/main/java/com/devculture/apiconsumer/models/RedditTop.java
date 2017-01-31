@@ -16,6 +16,7 @@ import java.util.Locale;
 /**
  * Per entry payload from reddit.com/top api endpoint.
  */
+@SuppressWarnings("unused")
 public class RedditTop {
 
     // ie. i.redd.it

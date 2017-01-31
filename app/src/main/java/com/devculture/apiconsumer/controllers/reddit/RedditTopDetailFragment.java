@@ -1,5 +1,6 @@
 package com.devculture.apiconsumer.controllers.reddit;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.devculture.apiconsumer.R;
-import com.devculture.apiconsumer.http.reddit.RedditClient;
 import com.devculture.apiconsumer.models.RedditTop;
 import com.devculture.apiconsumer.controllers.BaseFragment;
 import com.google.gson.Gson;
@@ -38,6 +38,7 @@ public class RedditTopDetailFragment extends BaseFragment {
         }
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.reddit_detail, container, false);
