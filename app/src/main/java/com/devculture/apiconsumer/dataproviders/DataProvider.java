@@ -100,9 +100,11 @@ public class DataProvider<T> {
     public void removeAll() {
         dataObjects.clear();
 
+        /*
         // notify data set changed.
         if (listener != null) {
             listener.onDataSetChanged(this);
         }
+        */
     }
 }

@@ -82,7 +82,7 @@ public class RedditClient {
                     e.printStackTrace();
 
                     if (listener != null) {
-                        listener.onFail(e.getMessage());
+                        listener.onFail(500, e.getMessage());
                     }
                 }
             }
@@ -90,7 +90,7 @@ public class RedditClient {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 if (listener != null) {
-                    listener.onFail("Reddit token fail: " + statusCode);
+                    listener.onFail(statusCode, "Reddit token fail: " + statusCode);
                 }
             }
         });
@@ -118,7 +118,7 @@ public class RedditClient {
                 @Override
                 public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                     if (listener != null) {
-                        listener.onFail("Reddit revoke token fail: " + statusCode);
+                        listener.onFail(statusCode, "Reddit revoke token fail: " + statusCode);
                     }
                 }
             });
@@ -146,7 +146,7 @@ public class RedditClient {
                         e.printStackTrace();
 
                         if (listener != null) {
-                            listener.onFail("Reddit username fail: " + e.getMessage());
+                            listener.onFail(500, "Reddit username fail: " + e.getMessage());
                         }
                     }
                 }
@@ -154,14 +154,14 @@ public class RedditClient {
                 @Override
                 public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                     if (listener != null) {
-                        listener.onFail("Reddit username fail: " + statusCode);
+                        listener.onFail(statusCode, "Reddit username fail: " + statusCode);
                     }
                 }
             });
         } else {
             // fail. missing valid token.
             if (listener != null) {
-                listener.onFail("Reddit username fail: no token");
+                listener.onFail(401, "Reddit username fail: no token");
             }
         }
     }
@@ -198,14 +198,14 @@ public class RedditClient {
                 @Override
                 public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                     if (listener != null) {
-                        listener.onFail("Reddit top posts fail: " + statusCode);
+                        listener.onFail(statusCode, "Reddit top posts fail: " + statusCode);
                     }
                 }
             });
         } else {
             // fail. missing valid token.
             if (listener != null) {
-                listener.onFail("Reddit top posts fail: no token");
+                listener.onFail(401, "Reddit top posts fail: no token");
             }
         }
     }

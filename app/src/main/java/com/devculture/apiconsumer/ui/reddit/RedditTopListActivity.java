@@ -24,12 +24,12 @@ import butterknife.BindView;
 
 /**
  * Activity in charge of retrieving list of top reddits. When appropriate, sends just enough
- * data to the detail fragment/activity such that it can display the reddit details.
+ * data to the detail fragment/activity such that it can display the redditClient details.
  */
 public class RedditTopListActivity extends BaseActivity implements RedditTopAdapter.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {
 
     @BindView(R.id.swipe_refresh)
-    SwipeRefreshLayout swipeLayout;
+    SwipeRefreshLayout reloader;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -51,9 +51,9 @@ public class RedditTopListActivity extends BaseActivity implements RedditTopAdap
     private Map<String, String> pagination = new HashMap<>();
 
     /**
-     * The reddit client.
+     * The redditClient client.
      */
-    private RedditClient reddit;
+    private RedditClient redditClient;
     private RedditTopAdapter redditAdapter;
 
     @Override
@@ -64,12 +64,12 @@ public class RedditTopListActivity extends BaseActivity implements RedditTopAdap
         // hook up the toolbar.
         toolbar.setTitle(getTitle());
 
-        // initialize reddit client.
-        reddit = new RedditClient(this);
+        // initialize redditClient client.
+        redditClient = new RedditClient(this);
 
         // set up the swipe refresher.
-        swipeLayout.setEnabled(true);
-        swipeLayout.setOnRefreshListener(this);
+        reloader.setEnabled(true);
+        reloader.setOnRefreshListener(this);
 
         // hook up scroller.
         scroller = new EndlessScrollListener((LinearLayoutManager) recyclerView.getLayoutManager()) {
@@ -110,9 +110,12 @@ public class RedditTopListActivity extends BaseActivity implements RedditTopAdap
      * @param totalRedditCount Number of reddits that have actually been loaded from the server.
      */
     private void loadMoreReddits(String before, String after, int page, int totalRedditCount) {
-        reddit.asyncGetTopReddits(before, after, totalRedditCount, 25, new RedditTopRequestListener() {
+        redditClient.asyncGetTopReddits(before, after, totalRedditCount, 25, new RedditTopRequestListener() {
             @Override
             public void onTopRequestSuccess(JSONObject response) {
+                // reload completed.
+                reloader.setRefreshing(false);
+
                 RedditTop[] list = null;
                 try {
                     JSONObject data = response.getJSONObject("data");
@@ -131,8 +134,18 @@ public class RedditTopListActivity extends BaseActivity implements RedditTopAdap
             }
 
             @Override
-            public void onFail(String reason) {
+            public void onFail(int statusCode, String reason) {
+                // reload completed.
+                reloader.setRefreshing(false);
 
+                // token probably expired.
+                if (statusCode == 401) {
+                    // check if token has expired.
+                    if (redditClient.getPrefs().getExpiration() < System.currentTimeMillis()) {
+                        // re-authenticate.
+                        gotoActivity(RedditTopAuthActivity.class, null);
+                    }
+                }
             }
         });
     }
@@ -166,5 +179,5 @@ public class RedditTopListActivity extends BaseActivity implements RedditTopAdap
 //
 //        context.startActivity(intent);
 //    }
-//
+
 }

@@ -69,12 +69,12 @@ public class RedditTopAuthActivity extends BaseActivity {
                             pushActivity(RedditTopListActivity.class, null);
                         }
                         @Override
-                        public void onFail(String reason) {
+                        public void onFail(int statusCode, String reason) {
                             Snackbar.make(webView, reason, Snackbar.LENGTH_LONG).setAction("Error", null).show();
                         }
                     });
                 } else if (url.contains("error=access_denied")) {
-                    Snackbar.make(webView, "oAuth access denied", Snackbar.LENGTH_LONG).setAction("Error", null).show();
+                    Snackbar.make(webView, "oauth access denied", Snackbar.LENGTH_LONG).setAction("Error", null).show();
                 }
             }
 

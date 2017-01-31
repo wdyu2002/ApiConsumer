@@ -1,5 +1,11 @@
 package com.devculture.apiconsumer.models;
 
+import android.databinding.BindingAdapter;
+import android.widget.ImageView;
+
+import com.devculture.apiconsumer.R;
+import com.squareup.picasso.Picasso;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -132,5 +138,20 @@ public class RedditTop {
     public String getPostedDate() {
         SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.getDefault());
         return dt.format(new Date(createdUtc));
+    }
+
+    /**
+     * Binds to app:thumbnail=@{reddit.thumbnail}
+     * Passes reddit.thumbnail into this method as the 2nd parameter.
+     *
+     * @param view The imageview that specifies the app:thumbnail attribute.
+     * @param thumbnail The thumbnail url.
+     */
+    @BindingAdapter({"bind:thumbnail"})
+    public static void loadImage(ImageView view, String thumbnail) {
+        Picasso.with(view.getContext())
+                .load(thumbnail)
+                .placeholder(R.mipmap.ic_launcher)
+                .into(view);
     }
 }

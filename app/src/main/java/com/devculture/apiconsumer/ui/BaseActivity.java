@@ -43,4 +43,19 @@ public class BaseActivity extends AppCompatActivity {
         }
         startActivity(intent);
     }
+
+    /**
+     * Goto an activity, clearing every other activity currently on the stack.
+     *
+     * @param clss   The activity class to instantiate.
+     * @param bundle Bundle data to be passed to the new activity.
+     */
+    public void gotoActivity(Class<?> clss, Bundle bundle) {
+        Intent intent = new Intent(this, clss);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        startActivity(intent);
+    }
 }
