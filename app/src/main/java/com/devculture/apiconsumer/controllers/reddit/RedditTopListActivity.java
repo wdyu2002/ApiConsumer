@@ -2,12 +2,14 @@ package com.devculture.apiconsumer.controllers.reddit;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.devculture.apiconsumer.R;
 import com.devculture.apiconsumer.adapters.RedditTopAdapter;
+import com.devculture.apiconsumer.controllers.BaseFragment;
 import com.devculture.apiconsumer.http.reddit.RedditClient;
 import com.devculture.apiconsumer.http.reddit.RedditTopRequestListener;
 import com.devculture.apiconsumer.models.RedditTop;
@@ -30,7 +32,7 @@ import butterknife.BindView;
  * Activity in charge of retrieving list of top reddits. When appropriate, sends just enough
  * data to the detail fragment/activity such that it can display the redditClient details.
  */
-public class RedditTopListActivity extends BaseActivity implements RedditTopAdapter.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {
+public class RedditTopListActivity extends BaseActivity implements BaseFragment.Listener, RedditTopAdapter.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {
 
     @BindView(R.id.swipe_refresh)
     SwipeRefreshLayout reloader;
@@ -174,5 +176,10 @@ public class RedditTopListActivity extends BaseActivity implements RedditTopAdap
             intent.putExtra("reddit", json);
             startActivity(intent);
         }
+    }
+
+    @Override
+    public void onFragmentEvent(Class<? extends Fragment> clss, String eventName, Map<String, Object> data) {
+
     }
 }

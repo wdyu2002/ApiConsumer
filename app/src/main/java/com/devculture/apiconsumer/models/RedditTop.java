@@ -169,8 +169,9 @@ public class RedditTop {
      */
     @BindingAdapter({"bind:reddit_thumbnail"})
     public static void loadImage(ImageView view, String thumbnail) {
-        Picasso.with(view.getContext())
-                .load(thumbnail)
+        Picasso picasso = Picasso.with(view.getContext());
+        // picasso.setIndicatorsEnabled(true);
+        picasso.load(thumbnail)
                 .placeholder(R.mipmap.ic_launcher)
                 .into(view);
     }

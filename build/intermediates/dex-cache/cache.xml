@@ -12,15 +12,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/dyu/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_467472bcad97bb709539140cf89793b26dd854db/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -66,30 +57,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
-        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_a5c6931ef5cd27f511f505709f655b1e7ae44cb1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="7f2420506110902f033406b25697cf97ee8c38b2">
         <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-25.1.0_be8fac497cfdc94cfd4ce053f4302c17e5a6ece9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Applications/Android Studio.app/Contents/gradle/m2repository/com/android/databinding/baseLibrary/2.2.3/baseLibrary-2.2.3.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b4b51d1925cdfda98fd861230c1ecb5855500129">
-        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/baseLibrary-2.2.3_474e89972d5faa940568625dac87a46c353c6a04/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -102,21 +75,93 @@
     </item>
     <item
         is-multidex="true"
-        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
-        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_256ff1c106e57ddb2a5ed7f2c41b8510f772bd1a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
         <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_3a10a81b24fe7d8856ffbc6df2c5b69c2c3e854c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_b1df4f10fd74dcb4b672841669df56a7056b9063/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d8a0456dec898eeb1501c42c5994e5ea9a41c2fb">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_06ac2613ddc11da10d5df1e916f302aaa11bedbd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/dyu/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_2d992da0ebea3d17beb517f28cf1f43ec052a60c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="aed2fb88d75d2f8007f7abb286a843582a882f3c">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fb8f3ecd98258f4c1da9f614df4213b416dc884e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/dyu/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.5.1/bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc/butterknife-annotations-8.5.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-annotations-8.5.1_00708359e088eaf97150e28bde5f750142337598/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/dyu/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_467472bcad97bb709539140cf89793b26dd854db/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_a5c6931ef5cd27f511f505709f655b1e7ae44cb1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Applications/Android Studio.app/Contents/gradle/m2repository/com/android/databinding/baseLibrary/2.2.3/baseLibrary-2.2.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b4b51d1925cdfda98fd861230c1ecb5855500129">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/baseLibrary-2.2.3_474e89972d5faa940568625dac87a46c353c6a04/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_256ff1c106e57ddb2a5ed7f2c41b8510f772bd1a/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -171,51 +216,6 @@
         revision="24.0.3"
         sha1="c56d29136c2257f63f08c29c4e739efb03b06c7d">
         <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.databinding-adapters-1.2.1_16cb39f728db041efab4cdb317090a52730395c5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/projects/api-consumer/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_b1df4f10fd74dcb4b672841669df56a7056b9063/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/projects/api-consumer/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="9f9651a693b7a29e5646134ed2aac4673247cfc9">
-        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fb8f3ecd98258f4c1da9f614df4213b416dc884e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/projects/api-consumer/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="10fdd791714ca2105d2cc8cf56dc77e8715ad196">
-        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_06ac2613ddc11da10d5df1e916f302aaa11bedbd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dyu/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
-        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_2d992da0ebea3d17beb517f28cf1f43ec052a60c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dyu/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.5.1/bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc/butterknife-annotations-8.5.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
-        <dex dex="/projects/api-consumer/app/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-annotations-8.5.1_00708359e088eaf97150e28bde5f750142337598/classes.dex" />
     </item>
     <item
         is-multidex="true"

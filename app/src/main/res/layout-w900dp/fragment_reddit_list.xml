@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="16dp"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    android:layout_marginTop="16dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:layout_marginTop="5dp"
     android:baselineAligned="false"
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
@@ -15,10 +15,10 @@
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"
-        android:layout_width="@dimen/item_width"
+        android:layout_width="400dp"
         android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp">
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/reddit_list"

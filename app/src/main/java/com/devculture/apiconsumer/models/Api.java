@@ -56,8 +56,9 @@ public class Api {
         // retrieve resourceId from thumbnail (local resource file name).
         try {
             Field idField = R.drawable.class.getDeclaredField(thumbnail);
-            Picasso.with(view.getContext())
-                    .load(idField.getInt(idField))
+            Picasso picasso = Picasso.with(view.getContext());
+            // picasso.setIndicatorsEnabled(true);
+            picasso.load(idField.getInt(idField))
                     .placeholder(R.mipmap.ic_launcher)
                     .into(view);
         } catch (Exception e) {
